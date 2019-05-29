@@ -1,0 +1,16 @@
+body{
+    text-align: center;
+}
+
+table{
+    border: 1px;
+    margin-top: 50px;
+}
+
+.left{
+    text-align: left;
+}
+
+.id{
+    font-size: 15pt;
+}

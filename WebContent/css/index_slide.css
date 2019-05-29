@@ -1,0 +1,71 @@
+.number{
+    color:#55ce3c;
+    font-weight: bold;
+    width:100%;
+}
+.title{
+	font-size:30px;
+}
+.picture1 {
+	background: lightgray;
+	height: 80px;
+	width: 120px;
+}
+.line1 {
+	padding: 20px;
+	float: left;
+	clear: left;
+}
+.line2 {
+	padding: 20px;
+	float: right;
+	clear: right;
+}
+.font {
+	color: #55ce3c;
+	font-size: 14px;
+	font-weight: bold;
+}
+.center {
+	position: absolute;
+    top: 50%;
+    left: 30%;
+    margin-top: -120px;
+}
+#center {
+	display: table;
+	margin-left: auto;
+	margin-right: auto;
+}
+#content {
+    position: absolute;
+    top: 50%;
+    height: 240px;
+    margin-top: -120px;
+}
+
+ #today, #yesterday{
+    float:left;
+    width:50%;
+    font-size: 200px;
+    text-align: center;
+}
+.graph{
+  	padding-top:20px;
+}
+.graph_li{
+  	float:left;
+  	width:100px;
+  	list-style:none;
+  	background:red;
+   	margin-left:40px;
+}
+.graph_date{
+  	float:left;
+  	width:100px;
+   	list-style:none;
+   	margin-left:40px;
+}
+.square{
+   	border:1px solid gray;
+}
