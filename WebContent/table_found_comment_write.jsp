@@ -9,7 +9,6 @@
 	request.setCharacterEncoding("utf-8");
 
 	int bnum = Integer.parseInt(request.getParameter("bnum"));
-	int cnum = 0;
 	String id = request.getParameter("id");
 	String contents = request.getParameter("comment_contents");
 	int space = Integer.parseInt(request.getParameter("space"));
@@ -19,16 +18,15 @@
 	stmt = conn.createStatement();
 	rs = stmt.executeQuery(select_board_count);
 	
-	String board_query = "insert into found_comment (cnum, bnum, id, contents, space) value (?, ?, ?, ?, ?)";
+	String board_query = "insert into found_comment (bnum, id, contents, space) value (?, ?, ?, ?)";
 	
 	try{ 
 		
 		pstmt = conn.prepareStatement(board_query); 
-		pstmt.setInt(1,cnum); 
-		pstmt.setInt(2,bnum); 
-		pstmt.setString(3,id);
-		pstmt.setString(4, contents);
-		pstmt.setInt(5, space);
+		pstmt.setInt(1,bnum); 
+		pstmt.setString(2,id);
+		pstmt.setString(3, contents);
+		pstmt.setInt(4, space);
 		
 		pstmt.executeUpdate(); 
 		System.out.println("Inserting Board Successfully!"); 

@@ -8,13 +8,13 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="css/table.css" />
+<script src="js/formChk.js"></script>
 </head>
 <body>
 <%@ include file="db_conn.jsp" %>
 <%@ include file="cookie.jsp" %>
 <%
 	request.setCharacterEncoding("UTF-8");
-
 	int bnum = Integer.parseInt(request.getParameter("bnum"));
 	int cnum = 1;
 	String title = "";
@@ -22,6 +22,10 @@
 	String id = "";
 	String date = "";
 	String img = null;
+	
+	String comment_contents = "";
+	String comment_id = "";
+	String comment_cnum = "";
 	int space = Integer.parseInt(request.getParameter("space"));
 	
 	
@@ -53,7 +57,7 @@
 		</td>
 	</tr>
 	<tr>
-		<%if(cookie_id != null) { %>
+		<%if(cookie_id != null && cookie_id.equals(id)) { %>
 		<td><a href="proc_table_found_delete.jsp?bnum=<%=bnum %>"><button>삭제</button></a></td>
 		<td><a href="table_found_update.jsp?bnum=<%=bnum %>"><button>수정</button></a></td>
 		<td><a href="table_found.jsp?space=<%=space %>"><button>돌아가기</button></a></td>
@@ -83,12 +87,12 @@
 <%	}
 	else {
 		while(rs.next()){
-			String comment_contents = rs.getString("contents");
-			String comment_id = rs.getString("id");
-			String comment_cnum = rs.getString("cnum");
+			comment_contents = rs.getString("contents");
+			comment_id = rs.getString("id");
+			comment_cnum = rs.getString("cnum");
 %>
 	<tr>
-		<td><%= id %></td>
+		<td><%= comment_id %></td>
 		<%if(cookie_id != null && cookie_id.equals(comment_id)) { %>
 		<td><%= comment_contents %></td>
 		<td>
@@ -107,11 +111,12 @@
 
 <form action="table_found_comment_write.jsp" name="frm" method="post">
 	<tr>
-		<td><%= id %><input type="hidden" name="id" value="<%= id %>"></td>
+	<% String write_id = (cookie_id != null) ? cookie_id : "익명"; %>
+		<td><%= write_id %><input type="hidden" name="id" value="<%= cookie_id %>"></td>
 		<td><textarea name="comment_contents"></textarea></td>
 		<td><input type="hidden" name="space" value="<%= space %>">
 		<input type="hidden" name="bnum" value="<%= bnum %>">
-		<input type="submit" value="등록"></td>
+		<input type="button" value="등록" onclick="formChk_comment()"></td>
 	</tr>
 	</form>
 	</table>

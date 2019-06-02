@@ -26,3 +26,22 @@
 	    
 		frm.submit();
 	}
+
+	function formChk_comment(){
+		var id = document.frm.id.value;
+		var contents = document.frm.comment_contents;
+		
+		if(id == "null"){
+			alert("로그인 하세요.");
+			location.href="login.jsp";
+			return;
+		}
+		
+		if(contents.value == ""){
+			alert("내용을 입력하세요.");
+			contents.focus();
+			return;
+		}
+		
+		frm.submit();
+	}
