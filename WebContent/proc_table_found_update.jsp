@@ -8,6 +8,7 @@
 	request.setCharacterEncoding("utf-8");
 
 	int bnum = Integer.parseInt(request.getParameter("bnum"));
+	int space = Integer.parseInt(request.getParameter("space"));
 	String file_url = request.getParameter("file");
 	String contents = request.getParameter("contents");
 	String title = request.getParameter("title");
@@ -41,7 +42,7 @@
 		System.out.println(e.getMessage()); 
 	} 
 	finally{
-		response.sendRedirect("table_found_content.jsp?bnum=" + bnum);
+		response.sendRedirect("table_found_content.jsp?bnum=" + bnum+"&space="+space);
 	}
 
 %>
