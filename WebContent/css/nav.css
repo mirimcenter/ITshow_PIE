@@ -1,17 +1,22 @@
+body{
+	
+}
 nav{		
 	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
 	height: 63px;
-	vertical-align: middle;
 	z-index: 1000;
 }
 .nav-item a{
-   	color:white;
+   	color:black;
+   	font-family:"¸¼Àº°íµñ";
+   	font-style: bold;
 }
 .nav-item a:hover{
    	color: black;
+
 }       	
 .logoImg{
    	max-height: 63px;
@@ -24,7 +29,7 @@ a{
    	text-decoration: none;
 }
 .justify-content-center{
-   	background-color: #55ce3c;
+   	background-color: white;
     padding-top: 10px;
     position: absolute;
     min-width: 100%;
@@ -39,6 +44,7 @@ a{
     margin-left: 80px;
     margin-top: 10px;
     font-size: 13pt;
+    font-style:bold;
 }
 .user{
 	float: right;
@@ -63,11 +69,8 @@ a{
 	border-radius: 5px;
 }
 .button1{
-	background: #55ce3c;
 	color: black;
-	border: 2px solid #41aa2b;
 }
 .button1:hover{
-	background: #41aa2b;
 	color: white;
 }

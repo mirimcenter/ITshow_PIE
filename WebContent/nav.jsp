@@ -43,7 +43,7 @@
 					</li>
 				<% } %>
 				</ul>
-				<ul style="position: absolute; right: 350px;">
+				<ul style="position: absolute;">
 					<li class="nav-item content-li">
 						<a class="nav-link" href="table.jsp">찾습니다</a>
 					</li>
