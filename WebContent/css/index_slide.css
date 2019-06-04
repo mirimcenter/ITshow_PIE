@@ -1,41 +1,22 @@
 .number{
-    color:#000000;
+    color:black;
     font-weight: bold;
 }
 .title{
-	font-size:30px;
+	font-size:20px;
 }
 .picture1 {
 	background: lightgray;
 	height: 80px;
 	width: 120px;
 }
-.line1 {
-	padding: 20px;
-	float: left;
-	clear: left;
-}
-.line2 {
-	padding: 20px;
-	float: right;
-	clear: right;
-}
+
 .font {
 	color: #55ce3c;
 	font-size: 14px;
 	font-weight: bold;
 }
-.center {
-	position: absolute;
-    top: 50%;
-    left: 30%;
-    margin-top: -120px;
-}
-#center {
-	display: table;
-	margin-left: auto;
-	margin-right: auto;
-}
+
 #content {
     position: absolute;
     top: 50%;
@@ -44,27 +25,11 @@
 }
 
  #today, #yesterday{
-    float:left;
     width:50%;
-    font-size: 200px;
+    font-size: 150px;
     text-align: center;
 }
-.graph{
-  	padding-top:20px;
-}
-.graph_li{
-  	float:left;
-  	width:100px;
-  	list-style:none;
-  	background:red;
-   	margin-left:40px;
-}
-.graph_date{
-  	float:left;
-  	width:100px;
-   	list-style:none;
-   	margin-left:40px;
-}
+
 .square{
    	border:1px solid gray;
 }
