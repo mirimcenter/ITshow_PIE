@@ -45,3 +45,15 @@
 		
 		frm.submit();
 	}
+	
+	function formChk_search(){
+		var text = document.frm.search_text;
+		
+		if(text.value == ""){
+			alert("검색할 내용을 입력하세요.");
+			text.focus();
+			return;
+		}
+		
+		frm.submit();
+	}
