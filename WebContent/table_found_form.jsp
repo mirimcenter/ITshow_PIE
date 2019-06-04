@@ -1,5 +1,6 @@
 <%@page import="java.net.ConnectException"%>
 <%@page import="java.sql.Timestamp"%>
+<%@page import="java.util.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -12,6 +13,51 @@
 <body>
 <%@include file="db_conn.jsp"%>
 <%@include file="cookie.jsp"%>
+    
+    <%
+    //하루지날때마다 d_day - 1됨 --------------------------------------------------------
+	    String d_Day_select = "select date, bnum from found_board where d_day > -7"; 
+	
+		Date today = new Date();
+		Calendar cal = Calendar.getInstance();
+		Calendar cal2 = Calendar.getInstance();
+		cal.setTime(today);
+		
+		System.out.println ( cal.get ( Calendar.YEAR ) + "년 " + 
+		( cal.get ( Calendar.MONTH ) + 1 ) + "월 " + 
+		cal.get ( Calendar.DATE ) + "일" );
+		
+		stmt = conn.createStatement();
+		rs = stmt.executeQuery(d_Day_select);
+		
+		while(rs.next()){
+			int bnum = rs.getInt("bnum");
+			Date date = rs.getDate("date");
+			
+			System.out.println(bnum + " : " + date);
+		
+			String d_Day_update = "update found_board set d_day=? where bnum="+bnum;
+			
+			cal2.setTime(date);
+			
+			int count = 0;
+			
+			while(!cal2.after(cal)){
+				count++;
+				cal2.add(Calendar.DATE,1); //다음날로 바뀜
+				
+				System.out.println ( cal2.get ( Calendar.YEAR ) + "년 " + 
+				( cal2.get ( Calendar.MONTH ) + 1 ) + "월 " + 
+				cal2.get ( Calendar.DATE ) + "일" );
+			}
+			
+			pstmt = conn.prepareStatement(d_Day_update); 
+			pstmt.setInt(1,8-count);
+			pstmt.executeUpdate(); 
+		}
+    //------------------------------------------------------------------------------------
+    %>
+    
 <table style="margin-top: 120px;">
 	<tr style="position: relation; top: 80px;">
 		<th>숫자</th>
@@ -35,6 +81,8 @@
 	
 	int allPage = 0; //전체 페이지 수
 	
+	int offset = ROWSIZE*(PG-1);
+	
 	int start = (PG*ROWSIZE)-(ROWSIZE-1); //해당 페이지에서 시작번호
 	int end = (PG*ROWSIZE); //해당 페이지에서 끝 번호
 	
@@ -48,19 +96,23 @@
 	
 	System.out.println(space);
 		
-	String select_board_result = "select * from found_board where space=" + space + " order by bnum desc limit " + start + ", " + ROWSIZE ;
-	String select_board_count = "select count(*) from found_board where space=" + space;
-	
+	String select_board_result = "select * from found_board where space=" + space + " and d_day > 0 order by bnum desc limit " + offset + ", " + ROWSIZE ;
+	String select_board_count = "select count(*) from found_board where space=" + space + " and d_day > 0";
+			
 	stmt = conn.createStatement();
 	rs = stmt.executeQuery(select_board_count);
 	if(rs.next()) total = rs.getInt(1);
+	
+ 	System.out.println(total);
+ 	System.out.println(start);
+ 	System.out.println(ROWSIZE);
 
 	//페이징 처리----------------------------------------------------------
 	allPage = (int)Math.ceil(total/(double)ROWSIZE);
 	  
 	if(endPage > allPage) endPage = allPage;
 	
-    int currentNum= total - ((PG-1)*ROWSIZE)-1; //게시판 번호 구하기
+    int currentNum= total - ((PG-1)*ROWSIZE); //게시판 번호 구하기
 	//----------------------------------------------------------
 	
 	rs = stmt.executeQuery(select_board_result);
