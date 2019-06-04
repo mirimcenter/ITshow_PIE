@@ -22,7 +22,7 @@
       <nav>
         <div class="justify-content-center">
         	<div>
-				<a href="index_temp.jsp">
+				<a href="index.jsp">
 					<img src="img/logo.png" alt="logo" class="logoImg">
 				</a>
 				<ul class="user">

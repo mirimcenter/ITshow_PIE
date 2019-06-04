@@ -28,7 +28,7 @@
 			Cookie cookie = new Cookie("id", id);
 			cookie.setMaxAge(60*60*24);
 			response.addCookie(cookie);
-			response.sendRedirect("index_temp.jsp");
+			response.sendRedirect("index.jsp");
 		}else{
 			out.println("<script>");
 			out.println("alert('정보가 틀렸습니다!')");
