@@ -110,30 +110,12 @@
 						}
 					%>
 					</section>
-					</center>
-					
+					</center>	
 					</div>
-					
-				<div>
-				<input type="button" value="찾아가세요"></input>
-				<input type="button" value="찾았어요"></input>s
-				</div>	
-				
-			</div>
+		</div>
 		
-		
-		<div class="section" id="section0">
-			<div style="float:left">
-				dfsfdfsdf	
-			</div>
-			<div style="float:left">
-			<section class="number">
-				<article id="yesterday">
-					<span class="title">어제 들어온 분실물</span><br> 
-					<span class="yester_num">
-					<%=yester_title.size() %>
-					</span>
-					        <select multiple size="5" style="width:100px;text-align:center;display:none;font-size:15px;" id="yester_mul" onchange="if(this.value) location.href=(this.value);">
+			<div class="listview">
+			<select multiple size="5" style="position:absolute;display:none;width:100px;text-align:center;font-size:15px;" id="yester_mul" onchange="if(this.value) location.href=(this.value);">
             				<%
             					for(int i=0;i<yester_title.size();i++) {
             		   			%>
@@ -143,12 +125,33 @@
             		   			<% 
             					}
             				%>
+       		</select>
+       		<select multiple size="5" style="width:100px;text-align:center;display:none;font-size:15px;" id="today_mul" onchange="if(this.value) location.href=(this.value);">
+            				<%
+            					for(int i=0;i<today_title.size();i++) {
+            						
+            		   			%>
+            		   				<option value="table_found_content.jsp?bnum=<%= today_bnum.get(i) %>"><%=today_title.get(i)%></option>
+            		   				
+            		   			<% 
+            					}
+            				%>            				
         </select>
-				</article>
+			</div>
+			
+			<div>
+			<section class="number">
+				<div id="yesterday">
+					<span class="title" >어제 들어온 분실물</span><br> 
+					<span class="yester_num" style="position:absolute">
+					<%=yester_title.size() %>
+					</span>
+					        
+				</div>
 
-				<article id="today">
+				<div id="today">
 					<span class="title">오늘 들어온 분실물</span><br> 
-					<span class="today_num"><%=today_title.size() %></span>
+					<span class="today_num" onclick="today_fun()"><%=today_title.size() %></span>
 					        <select multiple size="5" style="width:100px;text-align:center;display:none;font-size:15px;" id="today_mul" onchange="if(this.value) location.href=(this.value);">
             				<%
             					for(int i=0;i<today_title.size();i++) {
@@ -160,17 +163,17 @@
             					}
             				%>            				
         </select>
-				</article>
+				</div>
 
 			</section>
 			</div>
-			
 
-		</div>
 		
  <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
-  <script src="js/slick.js" type="text/javascript" charset="utf-8"></script>
-  <script type="text/javascript">
+  <script src="js/slick.js" charset="utf-8"></script>
+  
+  <script>
+  
     $(document).on('ready', function() {
     $('.autoplay').slick({
   slidesToShow: 2,
