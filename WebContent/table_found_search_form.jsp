@@ -61,6 +61,8 @@
     <%
 		request.setCharacterEncoding("utf-8");
 		int space = Integer.parseInt(request.getParameter("space"));
+		int search_type = Integer.parseInt(request.getParameter("search_type"));
+		String search_text = request.getParameter("search_text");
 		int total = 0;
 
 
@@ -87,10 +89,16 @@
 		//----------------------------------------------------------
 
 
+		String search_type_text = "";
+		
+		if(search_type == 1) search_type_text = "id like";
+		else if(search_type == 2) search_type_text = "title like";
 			
-		String select_board_result = "select * from found_board where space=" + space + " and d_day > 0 order by bnum desc limit " + offset + ", " + ROWSIZE ;
-		String select_board_count = "select count(*) from found_board where space=" + space + " and d_day > 0";
-				
+		String select_board_search = "select * from found_board where space='" + space + "' and " 
+		+ search_type_text + " '%" +search_text + "%' and d_day > 0 order by bnum desc limit " + offset + ", " + ROWSIZE ;
+		String select_board_count = "select count(*) from found_board where space='" + space + "' and " 
+		+ search_type_text + " '%" + search_text + "%' and d_day > 0";
+			
 		stmt = conn.createStatement();
 		rs = stmt.executeQuery(select_board_count);
 		if(rs.next()) total = rs.getInt(1);
@@ -110,11 +118,11 @@
 		</tr>
 	</form>
 </table>
-<table id="table_view">
+<table id="table_view" style="margin-top: 100px;">
 	<tr>
-		<td colspan="4">총 <b style="color:#c5e5bc;"><%=total %></b>건의 글이 있습니다.</td>
+		<td colspan="4">총 <%=total %>건의 글이 있습니다.</td>
 	<%if(cookie_id != null){%>
-		<td style="text-align:right;"><a href="table_found_write.jsp?space=<%= space %>"><button class="board_btn">글쓰기</button></a></td>
+		<td style="text-align:right;"><a href="table_found_search.jsp?space=<%= space %>"><button id="board_write_btn">글쓰기</button></a></td>
 	<% } %>
 	</tr>
 	<tr style="position: relation; top: 80px;">
@@ -133,7 +141,7 @@
     int currentNum= total - ((PG-1)*ROWSIZE); //게시판 번호 구하기
 	//----------------------------------------------------------
 	
-	rs = stmt.executeQuery(select_board_result);
+	rs = stmt.executeQuery(select_board_search);
 	
 	if(total == 0){ %>
 	<tr class="table_view_tr">
@@ -168,8 +176,8 @@
  %>
  <table id="table_paging">
  	<tr>
-		  <td><a href="table_found.jsp?pg=1&space=<%= space %>"><<</a></td>
-		  <td><a href="table_found.jsp?pg=<%=startPage-1%>&space=<%= space %>"><</a></td>
+		  <td><a href="table_found_search.jsp?pg=1&space=<%= space %>"><<</a></td>
+		  <td><a href="table_found_search.jsp?pg=<%=startPage-1%>&space=<%= space %>"><</a></td>
 		 <%
 		 %>
 		 <%
@@ -180,13 +188,13 @@
 		 <%
 		   }else{
 		 %>
-		  <td><a href="table_found.jsp?pg=<%=i %>&space=<%= space %>"><%=i %></a></td>
+		  <td><a href="table_found_search.jsp?pg=<%=i %>&space=<%= space %>"><%=i %></a></td>
 		 <%
 		   }
 		  }
 		 %>
-		  <td><a href="table_found.jsp?pg=<%=endPage+1 %>&space=<%= space %>">></a></td>
-		  <td><a href="table_found.jsp?pg=<%=allPage %>&space=<%= space %>">>></a></td>
+		  <td><a href="table_found_search.jsp?pg=<%=endPage+1 %>&space=<%= space %>">></a></td>
+		  <td><a href="table_found_search.jsp?pg=<%=allPage %>&space=<%= space %>">>></a></td>
 	 </tr>
   </table>
 </body>
