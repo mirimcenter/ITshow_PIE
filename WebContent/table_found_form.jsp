@@ -168,11 +168,16 @@
  %>
  <table id="table_paging">
  	<tr>
+ 		<% if(total != 0){ %>
 		  <td><a href="table_found.jsp?pg=1&space=<%= space %>"><<</a></td>
+		 <%}
+ 		if(PG>BLOCK){ %>
 		  <td><a href="table_found.jsp?pg=<%=startPage-1%>&space=<%= space %>"><</a></td>
-		 <%
-		 %>
-		 <%
+		 <%}
+		 if(total == 0){ %>
+			<td style="border:2px solid black;"><B style="color:black;">1</B></td>
+		 <% }
+		 else{
 		  for(int i=startPage; i<=endPage; i++){
 		   if(i==PG){
 		 %>
@@ -184,9 +189,13 @@
 		 <%
 		   }
 		  }
-		 %>
+		 }
+		 if(endPage<allPage) {%>
 		  <td><a href="table_found.jsp?pg=<%=endPage+1 %>&space=<%= space %>">></a></td>
+		  <%} 
+		   if(total != 0){%>
 		  <td><a href="table_found.jsp?pg=<%=allPage %>&space=<%= space %>">>></a></td>
+		  <%} %>
 	 </tr>
   </table>
 </body>
