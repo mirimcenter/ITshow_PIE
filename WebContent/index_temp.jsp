@@ -13,61 +13,15 @@
     
         <meta charset=utf-8>
         <title>미림 분실물 센터</title>
-        
-       	<link rel="stylesheet" type="text/css" href="css/slick.css">
-  		<link rel="stylesheet" type="text/css" href="css/slick-theme.css">
+       	
     	<link rel="stylesheet" type="text/css" href="css/fullpage.css" />
-    	
-		<link rel="stylesheet" type="text/css" href="css/example.js"/>
-		<link rel="stylesheet" type="text/css" href="index.js"/>
-		<link rel="stylesheet" type="text/css" href="css/index_slide.css"/>
+    	<link rel="stylesheet" type="text/css" href="css/examples.css" />
+    	<link rel="stylesheet" type="text/css" href="css/index_slide.css"/>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
 		
-		<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   		<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
     	
-    	<style>
-    	html, body {
-      margin: 0;
-      padding: 0;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    .slider {
-        width: 100%;
-        margin: 100px auto;
-    }
-
-    .slick-slide {
-      margin: 0px 20px;
-    }
-
-    .slick-slide img {
-      width: 100%;
-    }
-
-    .slick-prev:before,
-    .slick-next:before {
-      color: black;
-    }
-
-
-    .slick-slide {
-      transition: all ease-in-out .3s;
-      opacity: .2;
-    }
-    
-    .slick-active {
-      opacity: .5;
-    }
-
-    .slick-current {
-      opacity: 1;
-    }
-    	</style>
     	<script>
     	
     	 $(function() {
@@ -144,29 +98,40 @@
 	}
 	%>
 	
-		<div  style="background-image:url('img/school.jpg');background-size:100%;">
-				<center>
-				<section class="autoplay slider" style="vertical-align:middle;padding:100px;display:inline-block;margin-left: auto;margin-right:auto; padding:100px; width:1000px;height:500px;background-color: rgba( 255, 255, 255, 0.5 );">
+	<div id="fullpage">
+		<div class="section" id="section2" style="background-image:url('img/school.jpg');background-size:cover">
+				
+				<div >
+					
+					<center>
+					<div class="bxslider">
+					
 					<%
 						for(int i=0;i<entire_img.size();i++) {
 					%>
-					<div >
-						<a href="table_found_content.jsp?bnum=<%= entire_img.get(i) %>"><img style="width:200px;height:200px;"src="img_view.jsp?bnum=<%= entire_img.get(i) %>"></a>
+					<div>
+						<a href="table_found_content.jsp?bnum=<%= entire_img.get(i) %>"><img src="img_view.jsp?bnum=<%= entire_img.get(i) %>"></a>
 					</div>
 					<%
 						}
 					%>
-				</section>
-				</center>
-				
-				<!-- <input type="button" value="찾아가세요"></input>
-				<input type="button" value="찾았어요"></input> -->
+						
+					</div>
+					</center>
+				</div>
+				<input type="button" value="찾아가세요"></input>
+				<input type="button" value="찾았어요"></input>
+			
+		
 		</div>
 		
-				
-			<div>
+				<div class="section" id="section0">
+			<div style="float:left">
+				dfsfdfsdf	
+			</div>
+			<div style="float:left">
 			<section class="number">
-				<div id="yesterday">
+				<article id="yesterday">
 					<span class="title">어제 들어온 분실물</span><br> 
 					<span class="yester_num">
 					<%=yester_title.size() %>
@@ -182,9 +147,9 @@
             					}
             				%>
         </select>
-				</div>
+				</article>
 
-				<div id="today">
+				<article id="today">
 					<span class="title">오늘 들어온 분실물</span><br> 
 					<span class="today_num"><%=today_title.size() %></span>
 					        <select multiple size="5" style="width:100px;text-align:center;display:none;font-size:15px;" id="today_mul" onchange="if(this.value) location.href=(this.value);">
@@ -198,33 +163,14 @@
             					}
             				%>            				
         </select>
-				</div>
+				</article>
 
 			</section>
 			</div>
 			
 
 		</div>
-
- <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
-  <script src="js/slick.js" type="text/javascript" charset="utf-8"></script>
-  <script type="text/javascript">
-  function found() {
-	  
-  }
-  function find() {
-	  
-  }
-    $(document).on('ready', function() {
-    $('.autoplay').slick({
-  slidesToShow: 2,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 2000,
-});    
-        
-    });
-</script>
+	</div>
 
 	<script type="text/javascript" src="js/fullpage.js"></script>
 <script type="text/javascript" src="js/examples.js"></script>

@@ -9,22 +9,37 @@
 		String pw = request.getParameter("pw");
 		
 		String member_query = "insert into member (email, id, pw) value (?, ?, ?)";
+		String member_id = "select id from member";
 		
-		try{			
-			pstmt = conn.prepareStatement(member_query); 
-			pstmt.setString(1,email);
-			pstmt.setString(2,id);
-			pstmt.setString(3,pw);
-			pstmt.executeUpdate();
+		try{
+			pstmt = conn.prepareStatement(member_id);
+			rs = pstmt.executeQuery();
 			
-			System.out.println("Inserting Board Successfully!"); 
+			if(rs.next()){
+				if(rs.getString(1).equals(id)){
+					out.println("<script>");
+					out.println("alert('이미 사용중인 아이디 입니다')");
+					out.println("location.href='join_form.jsp'");
+					out.println("</script>");
+				}
+			}
+			else{
+				pstmt = conn.prepareStatement(member_query); 
+				pstmt.setString(1,email);
+				pstmt.setString(2,id);
+				pstmt.setString(3,pw);
+				pstmt.executeUpdate();
+				System.out.println("Inserting Board Successfully!");
+				
+%>
+				<jsp:forward page="Template.jsp">
+					<jsp:param value="join_result_proc.jsp" name="CONTENTPAGE"/>
+				</jsp:forward>
+<%
+			}
+			
 			pstmt.close(); 
 			conn.close();
-%>
-			<jsp:forward page="Template.jsp">
-				<jsp:param value="join_result_proc.jsp" name="CONTENTPAGE"/>
-			</jsp:forward>
-<% 
 		}catch (Exception e){ 
 			System.out.println(e.getMessage());
 %>
@@ -34,4 +49,3 @@
 <%
 		}
 %>
-

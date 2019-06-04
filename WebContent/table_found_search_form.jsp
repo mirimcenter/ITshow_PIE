@@ -159,7 +159,7 @@
 	<tr class="table_view_tr">
 		<td style="text-align:center"><%= currentNum %></td>
 		<td style="text-align:center"><%= d_day %></td>
-		<td><a href="table_found_content.jsp?space=<%= space %>&bnum=<%= bnum %>"><%= title %></a></td>
+		<td><a href="table_found_search.jsp?space=<%= space %>&bnum=<%= bnum %>"><%= title %></a></td>
 		<td style="text-align:center"><%= id %></td>
 		<td style="text-align:center"><%= date %></td>
 	</tr>
@@ -176,11 +176,12 @@
  %>
  <table id="table_paging">
  	<tr>
-		  <td><a href="table_found_search.jsp?pg=1&space=<%= space %>"><<</a></td>
-		  <td><a href="table_found_search.jsp?pg=<%=startPage-1%>&space=<%= space %>"><</a></td>
-		 <%
+		  <td><a href="table_found_search.jsp?pg=1&space=<%= space %>&search_type=<%=search_type%>&search_text=<%=search_text%>"><<</a></td>
+	 	<%
+	  	if(PG>BLOCK){
 		 %>
-		 <%
+		  <td><a href="table_found_search.jsp?pg=<%=startPage-1%>&space=<%= space %>&search_type=<%=search_type%>&search_text=<%=search_text%>"><</a></td>
+		 <%}
 		  for(int i=startPage; i<=endPage; i++){
 		   if(i==PG){
 		 %>
@@ -188,13 +189,14 @@
 		 <%
 		   }else{
 		 %>
-		  <td><a href="table_found_search.jsp?pg=<%=i %>&space=<%= space %>"><%=i %></a></td>
+		  <td><a href="table_found_search.jsp?pg=<%=i %>&space=<%= space %>&search_type=<%=search_type%>&search_text=<%=search_text%>"><%=i %></a></td>
 		 <%
 		   }
 		  }
-		 %>
-		  <td><a href="table_found_search.jsp?pg=<%=endPage+1 %>&space=<%= space %>">></a></td>
-		  <td><a href="table_found_search.jsp?pg=<%=allPage %>&space=<%= space %>">>></a></td>
+		 if(endPage<allPage) {%>
+		  <td><a href="table_found_search.jsp?pg=<%=endPage+1 %>&space=<%= space %>&search_type=<%=search_type%>&search_text=<%=search_text%>">></a></td>
+		  <%} %>
+		  <td><a href="table_found_search.jsp?pg=<%=allPage %>&space=<%= space %>&search_type=<%=search_type%>&search_text=<%=search_text%>">>></a></td>
 	 </tr>
   </table>
 </body>
