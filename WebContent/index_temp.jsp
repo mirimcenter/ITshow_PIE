@@ -13,14 +13,11 @@
     
         <meta charset=utf-8>
         <title>미림 분실물 센터</title>
-       	
-    	<link rel="stylesheet" type="text/css" href="css/fullpage.css" />
+       	<link rel="stylesheet" type="text/css" href="css/slick.css">
+		<link rel="stylesheet" type="text/css" href="css/slick-theme.css">
     	<link rel="stylesheet" type="text/css" href="css/examples.css" />
     	<link rel="stylesheet" type="text/css" href="css/index_slide.css"/>
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
-		
- 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  		<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
     	
     	<script>
     	
@@ -98,34 +95,34 @@
 	}
 	%>
 	
-	<div id="fullpage">
-		<div class="section" id="section2" style="background-image:url('img/school.jpg');background-size:cover">
-				
-				<div >
-					
+		<div style="background-image:url('img/school.jpg');background-size:cover">
+					<div>
 					<center>
-					<div class="bxslider">
 					
+					<section class="autoplay slider" style="width:800px;padding:50px;display:inline-block;background-color: rgba( 255, 255, 255, 0.5 );margin-top:150px;margin-bottom:150px" >
 					<%
 						for(int i=0;i<entire_img.size();i++) {
 					%>
 					<div>
-						<a href="table_found_content.jsp?bnum=<%= entire_img.get(i) %>"><img src="img_view.jsp?bnum=<%= entire_img.get(i) %>"></a>
+						<a href="table_found_content.jsp?bnum=<%= entire_img.get(i) %>"><img style="width:200px;height:200px;" src="img_view.jsp?bnum=<%= entire_img.get(i) %>"></a>
 					</div>
 					<%
 						}
 					%>
-						
-					</div>
+					</section>
 					</center>
-				</div>
+					
+					</div>
+					
+				<div>
 				<input type="button" value="찾아가세요"></input>
-				<input type="button" value="찾았어요"></input>
-			
+				<input type="button" value="찾았어요"></input>s
+				</div>	
+				
+			</div>
 		
-		</div>
 		
-				<div class="section" id="section0">
+		<div class="section" id="section0">
 			<div style="float:left">
 				dfsfdfsdf	
 			</div>
@@ -170,18 +167,19 @@
 			
 
 		</div>
-	</div>
-
-	<script type="text/javascript" src="js/fullpage.js"></script>
-<script type="text/javascript" src="js/examples.js"></script>
-<script type="text/javascript">
-	var myFullpage = new fullpage('#fullpage',
-			{
-				sectionsColor : [ '#ffffff', '#ffffff'],
-				anchors : ['firstPage', 'secondPage'],
-				menu : '#menu',
-				lazyLoad : true
-			});
+		
+ <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+  <script src="js/slick.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript">
+    $(document).on('ready', function() {
+    $('.autoplay').slick({
+  slidesToShow: 2,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 2000,
+});    
+        
+    });
 </script>
  		
     </body>
