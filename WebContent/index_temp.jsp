@@ -51,7 +51,8 @@
 		ArrayList<String> yester_bnum = new ArrayList<String>();
 		ArrayList<String> today_img = new ArrayList<String>();
 		ArrayList<String> yester_img = new ArrayList<String>();
-		
+		ArrayList<String> today_space = new ArrayList<String>();
+		ArrayList<String> yester_space = new ArrayList<String>();
 		ArrayList<String> entire_title=new ArrayList<String>();
 		ArrayList<String> entire_bnum = new ArrayList<String>();
 		ArrayList<String> entire_img = new ArrayList<String>();
@@ -80,11 +81,13 @@
 		if(today_date == d){
 			today_title.add(rs.getString("title"));
 			today_bnum.add(rs.getString("bnum"));
+			today_space.add(rs.getString("space"));
 			if(null_chk==1) today_img.add(rs.getString("bnum"));
 		}
 		else if((today_date-1)==d){
 			yester_title.add(rs.getString("title"));
 			yester_bnum.add(rs.getString("bnum"));
+			yester_space.add(rs.getString("space"));
 			if(null_chk==1) yester_img.add(rs.getString("bnum"));
 		}
 		
@@ -113,27 +116,26 @@
 					</center>	
 					</div>
 		</div>
+		<div style="margin-top:50px;" >
 		
-		<div style="margin-top:50px">
-		
-			<div class="listview" style="margin:10px; ">
-			<select multiple size="5" style="position:absolute;display:none;width:300px;height:300px;text-align:center;font-size:15px;" id="yester_mul" onchange="if(this.value) location.href=(this.value);">
+			<div class="listview" style="margin:10px;margin-left:400px ">
+			<select multiple size="5" style="background-image: url('img/purse.png');text-align:center;color:white;background-size:cover;position:absolute;display:block;width:500px;height:500px;text-align:center;font-size:25px;" id="yester_mul" onchange="if(this.value) location.href=(this.value);">
             				<%
             					for(int i=0;i<yester_title.size();i++) {
             		   			%>
             		   				
-            		   				<option value="table_found_content.jsp?bnum=<%= yester_bnum.get(i) %>"><%=yester_title.get(i)%></option>
+            		   				<option value="table_found_content.jsp?bnum=<%= yester_bnum.get(i) %>&space=<%=yester_space.get(i)%>"><%=yester_title.get(i)%></option>
             		   				
             		   			<% 
             					}
             				%>
        		</select>
-       		<select multiple size="5" style="position:absolute;width:100px;text-align:center;width:300px;height:300px;display:none;font-size:15px;" id="today_mul" onchange="if(this.value) location.href=(this.value);">
+       		<select multiple size="5" style="background-image: url('img/purse.png');color:white;background-size:cover;position:absolute;text-align:center;width:500px;height:500px;display:none;font-size:25px;" id="today_mul" onchange="if(this.value) location.href=(this.value);">
             				<%
             					for(int i=0;i<today_title.size();i++) {
             						
             		   			%>
-            		   				<option value="table_found_content.jsp?bnum=<%= today_bnum.get(i) %>"><%=today_title.get(i)%></option>
+            		   				<option value="table_found_content.jsp?bnum=<%= today_bnum.get(i) %>&space=<%=today_space.get(i)%>"><%=today_title.get(i)%></option>
             		   				
             		   			<% 
             					}
@@ -166,12 +168,12 @@
   <script>
   
     $(document).on('ready', function() {
-    	$('.yester_num').click(function() {
+    	$('.yester_num').hover(function() {
     		$('#yester_mul').css("display","inline-block");
     		$('#today_mul').css("display","none");
     	});
     	
-    	$('.today_num').click(function() {
+    	$('.today_num').hover(function() {
     		$('#today_mul').css("display","inline-block");
     		$('#yester_mul').css("display","none");
     	});
