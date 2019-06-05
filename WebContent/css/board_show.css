@@ -17,6 +17,9 @@
 }
 td{
 	border-bottom: 1px solid #ccc;
+}textarea{
+	width:100%;
+	border:0;
 }
 .board_btn, input[type=button]{
 		width: 90px;
@@ -38,4 +41,4 @@ td{
 	}
 	.tr2{
 		height:60%;
-	}
+	} 
