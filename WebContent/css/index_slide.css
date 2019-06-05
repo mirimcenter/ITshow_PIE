@@ -1,5 +1,6 @@
 .number{
     color:black;
+    margin-left:600px;
     font-weight: bold;
 }
 .title{
@@ -25,8 +26,8 @@
 }
 
  #today, #yesterday{
-    width:50%;
-    font-size: 150px;
+    width:100%;
+    font-size: 200px;
     text-align: center;
 }
 
