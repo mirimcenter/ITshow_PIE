@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="js/formChk.js"></script>
+<link rel="stylesheet" type="text/css" href="css/board_write.css">
 </head>
 <body>
 <%
@@ -15,13 +16,13 @@
 	System.out.println(space);
 %>
 <form action="proc_table_found_write.jsp" name="frm" method="post">
-	<table>
+	<table id="table_content">
 		<tr>
 			<td>
 				<input type="text" id="title" name="title">
 			</td>
 		</tr>
-		<tr>
+		<tr class="tr2">
 			<td>
 				<textarea id="contents" name="contents"></textarea>
 				<input type="hidden" name="space" value="<%= space %>">
