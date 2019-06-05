@@ -11,7 +11,6 @@ nav{
 }
 .nav-item a{
    	color:black;
-   	font-family:"¸¼Àº°íµñ";
    	font-style: bold;
 }
 .nav-item a:hover{
@@ -33,6 +32,7 @@ a{
     padding-top: 10px;
     position: absolute;
     min-width: 100%;
+    border-bottom: 1px solid #ddd;
 }
 .justify-content-center ul{
  	display: inline-block;
@@ -69,8 +69,8 @@ a{
 	border-radius: 5px;
 }
 .button1{
-	color: black;
+	color: #abd6a0;
 }
 .button1:hover{
-	color: white;
+	color: #111;
 }

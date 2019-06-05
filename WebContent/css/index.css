@@ -65,14 +65,6 @@
 #c{
   background: #FAF4C0;
 }
-		
-#button {
-    font-size : 12pt;
-    color : white;
-    background-color : #38985A;
-    width : 100px;
-    height : 45px;
-}
 input:hover{
 	cursor:pointer;
 }
