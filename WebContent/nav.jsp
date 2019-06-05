@@ -1,4 +1,4 @@
-<%@page import="java.net.URLDecoder"%>
+<%@ page import="java.net.URLDecoder"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
   <head>
@@ -53,9 +53,15 @@
 					<li class="nav-item content-li">
 						<a class="nav-link" href="#">유기물품</a>
 					</li>
+<%
+					if(cookie_id != null){
+%>
 					<li class="nav-item content-li">
-						<a class="nav-link" href="#">My page</a>
+						<a class="nav-link" href="mypage.jsp">My page</a>
 					</li>
+<%
+					}
+%>
 				</ul>
 			</div>
 		</div>

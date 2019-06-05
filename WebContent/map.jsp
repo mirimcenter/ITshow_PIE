@@ -21,7 +21,7 @@ body {
   z-index: 1;
   top: 80px;
   left: 0;
-  background-color: #111;
+  background-color: #c5e5bc;
   overflow-x: hidden;
   padding-top: 20px;
 }
@@ -43,7 +43,7 @@ body {
 
 /* On mouse-over */
 .sidenav a:hover, .dropdown-btn:hover {
-  color: #f1f1f1;
+  color: #111;
 }
 
 /* Main content */
@@ -62,7 +62,7 @@ body {
 /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
 .dropdown-container {
   display: none;
-  background-color: #262626;
+  background-color: #add6a2;
   padding-left: 8px;
 }
 
