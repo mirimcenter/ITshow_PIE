@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="css/board_update.css" />
+<link rel="stylesheet" type="text/css" href="css/board_write.css" />
 <script src="js/formChk.js"></script>
 </head>
 <body>
@@ -19,12 +19,12 @@
 	<form action="proc_table_found_write.jsp" name="frm" method="post">
 		<tr>
 			<td>
-				<input type="text" id="title" name="title">
+				<input type="text" id="title" name="title" placeholder="제목을 입력하세요">
 			</td>
 		</tr>
 		<tr class="tr2">
 			<td>
-				<textarea id="contents" name="contents"></textarea>
+				<textarea id="contents" name="contents" placeholder="내용을 입력하세요"></textarea>
 				<input type="hidden" name="space" value="<%= space %>">
 			</td>
 		</tr>

@@ -16,12 +16,12 @@
 	<form action="proc_table_find_write.jsp" name="frm" method="post">
 		<tr>
 			<td>
-				<input type="text" id="title" name="title">
+				<input type="text" id="title" name="title" placeholder="제목을 입력하세요">
 			</td>
 		</tr>
 		<tr class="tr2">
 			<td style="height:400px">
-				<textarea id="contents" name="contents"></textarea>
+				<textarea id="contents" name="contents" placeholder="내용을 입력하세요"></textarea>
 			</td>
 		</tr>
 		<tr>

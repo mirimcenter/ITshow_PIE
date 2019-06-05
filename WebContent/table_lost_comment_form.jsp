@@ -7,7 +7,7 @@
 <head>
 <link rel="stylesheet" type="text/css" href="css/board_show.css" />
 <script src="js/formChk.js"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Insert title here</title>
 </head>
 <body>
