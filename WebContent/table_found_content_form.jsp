@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="css/table.css" />
+<link rel="stylesheet" type="text/css" href="css/board_show.css" />
 <script src="js/formChk.js"></script>
 </head>
 <body>
@@ -39,31 +39,31 @@
 	}
 %>
 <table id="table_content">
-	<tr>
-		<td><%= title %></td>
-		<td><%= id %></td>
-		<td><%= date %></td>
+	<tr class="tr1">
+		<td class="td1"><%= title %></td>
+		<td class="td2"><%= id %></td>
+		<td class="td3"><%= date %></td>
 	</tr>
-	<tr>
+	<tr class="tr2">
 		<td colspan="3">
 		<%if(img != null){ %>
 			<img src="img_view.jsp?bnum=<%= bnum %>"><br>
 		<%} %>
-			<textarea><%= contents %></textarea>
+			<%= contents %>
 		</td>
 	</tr>
 	<tr>
 		<%if(cookie_id != null && cookie_id.equals(id)) { %>
-		<td><a href="proc_table_found_delete.jsp?bnum=<%=bnum %>"><button>삭제</button></a></td>
-		<td><a href="table_found_update.jsp?bnum=<%=bnum %>"><button>수정</button></a></td>
-		<td><a href="table_found.jsp?space=<%=space %>"><button>돌아가기</button></a></td>
+		<td><a href="proc_table_found_delete.jsp?bnum=<%=bnum %>"><button class="board_btn">삭제</button></a></td>
+		<td><a href="table_found_update.jsp?bnum=<%=bnum %>"><button class="board_btn">수정</button></a></td>
+		<td><a href="table_found.jsp?space=<%=space %>"><button class="board_btn">돌아가기</button></a></td>
 		<% } 
 		else{%>
-		<td colspan="3"><a href="table_found.jsp?space=<%=space %>"><button>돌아가기</button></a></td>
+		<td colspan="3"><a href="table_found.jsp?space=<%=space %>"><button class="board_btn">돌아가기</button></a></td>
 		<%} %>
 	</tr>
 </table>
-<table>
+<table id="table_comment">
 <%
 	int count = 0;
 	
@@ -88,12 +88,12 @@
 			int comment_cnum = rs.getInt("cnum");
 %>
 	<tr>
-		<td><%= comment_id %></td>
+		<td class="td1"><%= comment_id %></td>
 		<%if(cookie_id != null && cookie_id.equals(comment_id)) { %>
-		<td><%= comment_contents %></td>
-		<td>
-			<a href="table_found_comment.jsp?bnum=<%= bnum %>&space=<%= space %>&cnum=<%= comment_cnum%>"><button>수정</button></a>
-			<a href="table_found_comment_delete.jsp?bnum=<%= bnum %>&space=<%= space %>&cnum=<%= comment_cnum%>"><button>삭제</button></a>
+		<td class="td2"><%= comment_contents %></td>
+		<td class="td3">
+			<a href="table_found_comment.jsp?bnum=<%= bnum %>&space=<%= space %>&cnum=<%= comment_cnum%>"><button class="board_btn">수정</button></a>
+			<a href="table_found_comment_delete.jsp?bnum=<%= bnum %>&space=<%= space %>&cnum=<%= comment_cnum%>"><button class="board_btn">삭제</button></a>
 		</td>
 		<% } 
 		else{ %>
