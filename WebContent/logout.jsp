@@ -10,6 +10,6 @@
 				response.addCookie(cookies[i]);
 			}
 		}
-		response.sendRedirect("index_temp.jsp");
+		response.sendRedirect("index.jsp");
 	}
 %>

@@ -8,13 +8,13 @@
 	request.setCharacterEncoding("utf-8");
 
 	int bnum = Integer.parseInt(request.getParameter("bnum"));
-	int space = Integer.parseInt(request.getParameter("space"));
 	int cnum = Integer.parseInt(request.getParameter("cnum"));
-	String contents = request.getParameter("comment_contents");
 	
-	String update_query = "update found_comment set contents = '"+contents+"' where cnum="+cnum;
+	String delete_query = "delete from find_comment where cnum = "+cnum;
+	System.out.println(cnum);
 	try{
-	pstmt = conn.prepareStatement(update_query);
+	
+	pstmt = conn.prepareStatement(delete_query);
 	pstmt.executeUpdate();
 	}
 	catch(SQLException e){
@@ -24,6 +24,6 @@
 		System.out.println(e);
 	}
 	finally{
-	response.sendRedirect("table_found_content.jsp?bnum="+bnum + "&space=" + space);
+	response.sendRedirect("table_find_content.jsp?bnum="+bnum);
 	}
 %>

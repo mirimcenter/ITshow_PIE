@@ -45,13 +45,13 @@
 				</ul>
 				<ul style="position: absolute;">
 					<li class="nav-item content-li">
-						<a class="nav-link" href="table.jsp">찾습니다</a>
+						<a class="nav-link" href="table_find.jsp">찾습니다</a>
 					</li>
 					<li class="nav-item content-li">
 						<a class="nav-link" href="map_main1F.jsp">찾아가세요</a>
 					</li>
 					<li class="nav-item content-li">
-						<a class="nav-link" href="#">유기물품</a>
+						<a class="nav-link" href="table_lost.jsp">유기물품</a>
 					</li>
 <%
 					if(cookie_id != null){

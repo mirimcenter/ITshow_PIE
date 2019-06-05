@@ -8,7 +8,6 @@
 	request.setCharacterEncoding("utf-8");
 
 	int bnum = Integer.parseInt(request.getParameter("bnum"));
-	int space = Integer.parseInt(request.getParameter("space"));
 	int cnum = Integer.parseInt(request.getParameter("cnum"));
 	String contents = request.getParameter("comment_contents");
 	
@@ -24,6 +23,6 @@
 		System.out.println(e);
 	}
 	finally{
-	response.sendRedirect("table_found_content.jsp?bnum="+bnum + "&space=" + space);
+	response.sendRedirect("table_lost_content.jsp?bnum="+bnum);
 	}
 %>

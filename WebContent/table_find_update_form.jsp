@@ -17,9 +17,8 @@
 	String contents = "";
 	String id = "";
 	String date = "";
-	String space = "";
 	
-	String select_query = "select * from found_board where bnum="+bnum;
+	String select_query = "select * from find_board where bnum="+bnum;
 	
 	stmt = conn.createStatement();
 	rs = stmt.executeQuery(select_query);
@@ -28,10 +27,9 @@
 		contents = rs.getString("contents");
 		id = rs.getString("id");
 		date = rs.getString("date");
-		space = rs.getString("space");
 	}
 %>
-<form action="proc_table_found_update.jsp" name="frm" method="post">
+<form action="proc_table_find_update.jsp" name="frm" method="post">
 	<table id="table_content">
 		<tr>
 			<td>
@@ -39,10 +37,9 @@
 			</td>
 		</tr>
 		<tr class="tr2">
-			<td>
+			<td style="height:400px">
 				<textarea id="contents" name="contents"><%= contents %></textarea>
 				<input type="hidden" name="bnum" value="<%= bnum %>">
-				<input type="hidden" name="space" value="<%= space %>">
 			</td>
 		</tr>
 		<tr>
@@ -57,7 +54,7 @@
 				<input type="button" value="작성" onclick="formChk()">
 				<input type="reset" value="다시" class="board_btn">
 </form>
-				<a href="table_found.jsp?space=<%=space %>"><button class="board_btn">돌아가기</button></a>
+				<a href="table_find.jsp"><button class="board_btn">돌아가기</button></a>
 			</td>
 		</tr>
 	</table>

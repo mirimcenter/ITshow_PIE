@@ -11,21 +11,17 @@
 <body>
 <%
 	request.setCharacterEncoding("utf-8");
-	int space = Integer.parseInt(request.getParameter("space"));
-	
-	System.out.println(space);
 %>
 <table id="table_content">
-	<form action="proc_table_found_write.jsp" name="frm" method="post">
+	<form action="proc_table_find_write.jsp" name="frm" method="post">
 		<tr>
 			<td>
 				<input type="text" id="title" name="title">
 			</td>
 		</tr>
 		<tr class="tr2">
-			<td>
+			<td style="height:400px">
 				<textarea id="contents" name="contents"></textarea>
-				<input type="hidden" name="space" value="<%= space %>">
 			</td>
 		</tr>
 		<tr>
@@ -40,7 +36,7 @@
 				<input type="button" value="작성" onclick="formChk()">
 				<input type="reset" value="다시" class="board_btn">
 		</form>
-				<a href="table_found.jsp?space=<%=space %>"><button class="board_btn">돌아가기</button></a>
+				<a href="table_find.jsp"><button class="board_btn">돌아가기</button></a>
 			</td>
 		</tr>
 	</table>
