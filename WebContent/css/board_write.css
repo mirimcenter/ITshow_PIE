@@ -1,0 +1,32 @@
+#table_content{
+	border: 2px solid #c5e5bc;
+	height: 70vh;
+	width: 70%;
+    margin: center;
+    margin-left: auto; 
+    margin-right: auto;
+    text-align: center;
+}
+td{
+	border-bottom: 1px solid #ccc;
+}
+textarea{
+	width:100%;
+	height:100%;
+	border:0;
+}
+input[type=text]{
+	width:100%;
+	border:0;
+}
+.board_btn, input[type=button], button, input[type=reset]{
+		width: 90px;
+		height: 30px;
+		background-color:#c5e5bc;
+		border:none;
+	}
+	.tr1{
+	}
+	.tr2{
+		height:60%;
+	}
