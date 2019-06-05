@@ -38,7 +38,7 @@
 	            <form action="proc_mypage_update.jsp" name="frm" method="post">
 	                <tr width="40%">
 	                    <td width="50px"><p class="id">ID</p></td>
-	                    <td width="250px"><textarea id="id" name="id"><%= cookie_id %></textarea></td>
+	                    <td width="250px"><%= cookie_id %></td>
 	                </tr>
 	                <tr>
 	                    <td width="50px"><p class="pw">PW</p></td>
@@ -46,7 +46,7 @@
 	                </tr>
 	                <tr>
 	                    <td width="50px"><p class="email">EMAIL</p></td>
-	                    <td width="250px"><textarea id="email" name="email"><%= email %></textarea></td>
+	                    <td width="250px"><%= email %></td>
 	                </tr>
 	                <tr>
 	                <td colspan=2 style="border:none; text-align: right;"><button type="submit" value="회원정보 수정" class="btn_re">회원정보 수정</button></td>
