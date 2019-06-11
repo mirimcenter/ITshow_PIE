@@ -1,0 +1,60 @@
+@font-face {
+    font-family: "NotoSansCJKkr";
+    src: url('font/NotoSansCJKkr-Reqular.otf') format('opentype');
+}
+
+.userbox{
+    border: 5px solid #e1e1e1;
+    padding: 30px;
+}
+
+.userbox hr{
+    border: 3px solid #e1e1e1;
+    width: 500px;
+}
+
+.userbox a{
+	border: 3px solid #e1e1e1;
+	padding: 5px;
+	text-decoration: none;
+	color: #111;
+	margin-left: 100px;
+}
+
+.tbl{
+    border: none;
+    width: 90%;
+    padding: 50px;
+    margin-left: 50px;
+}
+
+.tbl td{
+    height: 50px;
+}
+
+.tbl input{
+    border: 5px solid #e1e1e1;
+    height: 20px;
+    width: 250px;
+}
+
+.login_btn{
+    background: #00a651;
+    color: white;
+    font-size: 15pt;
+    width: 80px;
+    height: 85px;
+    border: none;
+}
+
+.login_docu{
+    font-size: 15pt;
+    margin-left: 100px;
+    font-family: "NotoSansCJKkr";
+}
+
+.little{
+    color: #999;
+    margin-left: 100px;
+    font-family: "NotoSansCJKkr";
+}
