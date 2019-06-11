@@ -101,9 +101,6 @@
 </div>
 <div id="tag"><b>홈 > 찾아가세요</b></div>
 <hr>
-	<%if(cookie_id != null){%>
-		<a href="table_found_write.jsp?space=<%= space %>"><button class="board_btn">글쓰기</button></a>
-	<% } %>
 <table id="table_view">
 	<tr>
 		<td colspan="3" style="text-align:left;">총 <%=total %>건의 글이 있습니다.</td>
@@ -167,6 +164,13 @@
 	} 
 		} 
 %>
+<%if(cookie_id != null){%>
+	<tr>
+		<td colspan="5">
+			<a href="table_found_write.jsp?space=<%= space %>"><button class="board_btn">글쓰기</button></a>
+		</td>
+	</tr>
+<% } %>
 </table>
 
 <%

@@ -173,6 +173,13 @@
 	} 
 		} 
 %>
+<%if(cookie_id != null){%>
+	<tr>
+		<td colspan="5">
+			<a href="table_found_write.jsp?space=<%= space %>"><button class="board_btn">글쓰기</button></a>
+		</td>
+	</tr>
+<% } %>
 </table>
 
 <%

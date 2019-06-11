@@ -123,6 +123,13 @@
 	} 
 		} 
 %>
+<%if(cookie_id != null){%>
+	<tr>
+		<td colspan="4">
+			<a href="table_find_write.jsp"><button class="board_btn">글쓰기</button></a>
+		</td>
+	</tr>
+<% } %>
 </table>
 
 <%
