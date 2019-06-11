@@ -1,25 +1,28 @@
 #table_content{
-	border: 2px solid #c5e5bc;
 	height: 50%;
 	width: 70%;
     margin: center;
     margin-left: auto; 
     margin-right: auto;
     text-align: center;
+    margin-top:20px;
 }
 #table_comment{
-	border: 2px solid #c5e5bc;
 	width: 70%;
     margin: center;
     margin-left: auto; 
     margin-right: auto;
-    text-align: center;
+    text-align: left;
 }
-td{
-	border-bottom: 1px solid #ccc;
-}textarea{
+.board_tr{
+	border-bottom: 2px solid #ccc;
+	height:50px;
+}
+textarea{
 	width:100%;
-	border:0;
+	border:1px solid #ccc;
+	text-align:left;
+	height:80%;
 }
 .board_btn, input[type=button]{
 		width: 90px;
@@ -28,17 +31,49 @@ td{
 		border:none;
 	}
 	.td1{
-		width:20%;
+		text-align: left;
+		font-size:20px;
 	}
 	.td2{
-		width:60%;
+		text-align: right;
+		color:#666666;
+		width:80%;
 	}
 	.td3{
-		width:20%;
+		text-align: right;
+		color:#666666;
 	}
-	.tr1{
-		background-color:#c5e5bc;
-	}
-	.tr2{
-		height:60%;
+	.board_tr2{
+		height:70%;
 	} 
+	.comment_tr{
+		height:50px;
+	}
+	.comment_td{
+		width:80%;
+	}
+	.comment_bottom{
+		height:50px;
+		border-bottom: 2px solid #ccc;
+	}
+	.img{
+		width: 300px;
+    	height: auto;
+		margin-bottom:30px;
+	}
+	.btn_back{
+		margin-left:15%;
+	}
+	.comment_id{
+		width:5%;
+		color:#339933;
+	}
+	.comment_id2{
+		width:5%;
+	}
+	.btn_delete{
+		text-align:left;
+	}
+	.btn_update{
+		text-align:right;
+	}
