@@ -23,14 +23,35 @@
 			width:100%;
 			height:300px
 		}
+		
+		input {
+		background-color:transparent;
+		font-size:13px;
+  		border: 2px solid black;
+  		border-radius:5px;
+ 		color: black;
+ 		font-weight:bold;
+		padding: 13px 45px;
+		text-decoration: none;
+		margin: 4px 2px;
+		cursor: pointer;
+		position:relative;
+		top:180px;
+		}
 	</style>
     </head>
     <body>
 
 	<img src="img/main.png" style="margin-bottom: 100px">
 	<img src="img/first.png">
-	<div class="img" style="background-image:url('img/img1.png');"></div>
-	<div class="img" style="background-image:url('img/img2.png');"></div>
-	<div class="img" style="background-image:url('img/img3.png');"></div>
+	<div class="img" style="background-image:url('img/img1.png');">
+	<input type="button" value="찾으러 가기" style="left:1080px;" onClick="location.href='table_find.jsp'">
+	</div>
+	<div class="img" style="background-image:url('img/img2.png');">
+	<input type="button" value="올리러 가기" style="left:480px" onClick="location.href='map_main1F.jsp'">
+	</div>
+	<div class="img" style="background-image:url('img/img3.png');">
+	<input type="button" value="만나러 가기"style="left:1100px;" onClick="location.href='table_lost.jsp'">
+	</div>
   </body>
 </html>
