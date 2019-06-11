@@ -6,6 +6,7 @@
 .userbox{
     border: 5px solid #e1e1e1;
     padding: 30px;
+    text-align: left;
 }
 
 .userbox hr{
