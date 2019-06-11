@@ -38,6 +38,22 @@
     width: 250px;
 }
 
+.join{
+    padding-left: 100px;
+    padding-right: 50px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.join td{
+    height: 70px;
+}
+
+.join input{
+    width: 200px;
+    height: 30px;
+}
+
 .login_btn{
     background: #00a651;
     color: white;
@@ -45,6 +61,17 @@
     width: 80px;
     height: 85px;
     border: none;
+}
+
+.join_btn{
+    background: #00a651;
+    color: white;
+    font-size: 15pt;
+    width: 120px;
+    height: 40px;
+    border: none;
+    margin-left: 300px;
+    margin-top: 10px;
 }
 
 .login_docu{
@@ -57,4 +84,10 @@
     color: #999;
     margin-left: 100px;
     font-family: "NotoSansCJKkr";
+}
+
+.attend{
+    color: #00a651;
+    font-size: 8pt;
+    margin-left: 100px;
 }
