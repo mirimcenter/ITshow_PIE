@@ -61,48 +61,50 @@
 	}
 	result = pageContext.setAttribute("result", false);
 %> --%>
-    <form action="join_result.jsp" method="post" name="userInfo" onsubmit="return checkValue()">
-        <div class="userbox" style="width: 700px; height: 500px;">
-            <p class="login_docu"><font color="#00a651"><b>미림센터에 가입</b></font>하시고 물건을 보호하세요!</p>
-            <p class="little">미림센터를 이용하기 위해서 회원가입을 해주세요</p>
-            <font class="attend">* 체크된 항목은 필수로 기입하셔야합니다</font>
-            <hr>
-	        <table class="tbl join">
-	        	<tr>
-                    <td>
-                        *학교이메일
-                    </td>
-                    <td>
-                    	<input type="text" name="email" maxlength="30">
-					</td>
-                </tr>
-                <tr>
-                    <td>
-                        *아이디
-                    </td>
-                    <td>
-                    	<input type="text" name="id" maxlength="30">
-					</td>
-                </tr>
-                <tr>
-                    <td>
-                        *비밀번호
-                    </td>
-                    <td>
-                    	<input type="password" name="pw" maxlength="30">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        *비밀번호 확인
-                    </td>
-                    <td>
-                    	<input type="password" name="pw2" maxlength="30">
-                    </td>
-                </tr>
-            </table>
-            <hr>
-            <button type=submit id="button" class="join_btn">회원가입</button>
+    <div align="center">
+            <form action="join_result.jsp" method="post" name="userInfo" onsubmit="return checkValue()">
+                <div class="userbox" style="width: 700px; height: 500px;">
+                    <p class="login_docu"><font color="#00a651"><b>미림센터에 가입</b></font>하시고 물건을 보호하세요!</p>
+                    <p class="little">미림센터를 이용하기 위해서 회원가입을 해주세요</p>
+                    <font class="attend">* 체크된 항목은 필수로 기입하셔야합니다</font>
+                    <hr>
+                    <table class="tbl join">
+                        <tr>
+                            <td>
+                                *학교이메일
+                            </td>
+                            <td>
+                                <input type="text" name="email" maxlength="30">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                *아이디
+                            </td>
+                            <td>
+                                <input type="text" name="id" maxlength="30">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                *비밀번호
+                            </td>
+                            <td>
+                                <input type="password" name="pw" maxlength="30">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                *비밀번호 확인
+                            </td>
+                            <td>
+                                <input type="password" name="pw2" maxlength="30">
+                            </td>
+                        </tr>
+                    </table>
+                    <hr>
+                    <button type=submit id="button" class="join_btn">회원가입</button>
+                </div>
+            </form>
         </div>
-    </form>
 </body>
