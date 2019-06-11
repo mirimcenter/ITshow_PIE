@@ -41,9 +41,39 @@
 	</style>
     </head>
     <body>
+<%
+ArrayList<String> entire_img = new ArrayList<String>();
+int null_chk;
+String select_title = "select * from found_board";
+pstmt = conn.prepareStatement(select_title);
+rs = pstmt.executeQuery();
 
+while(rs.next()) {
+	null_chk = rs.getString("img")==null?0:1;
+	if(null_chk==1) entire_img.add(rs.getString("bnum"));
+}
+
+%>
 	<img src="img/main.png" style="margin-bottom: 100px">
 	<img src="img/first.png">
+	<div style="color:black;">
+	<center>
+	<section class="autoplay slider" style="width:1500px;padding:100px;display:inline-block;background-color: rgba( 255, 255, 255, 0.5 );" >
+					<%
+						for(int i=0;i<entire_img.size();i++) {
+					%>
+					<div>
+						<a href="table_found_content.jsp?bnum=<%= entire_img.get(i) %>"><img style="width:200px;height:200px;" src="img_view.jsp?bnum=<%= entire_img.get(i) %>"></a>
+					</div>
+					<%
+						}
+					%>
+	</section>
+	</center>
+	<div style="margin-left: 300px;font-weight: bold;">
+	| 오늘 들어온 분실물은 <%=entire_img.size()%>개입니다.</div>
+	</div>
+	
 	<div class="img" style="background-image:url('img/img1.png');">
 	<input type="button" value="찾으러 가기" style="left:1080px;" onClick="location.href='table_find.jsp'">
 	</div>
@@ -53,5 +83,17 @@
 	<div class="img" style="background-image:url('img/img3.png');">
 	<input type="button" value="만나러 가기"style="left:1100px;" onClick="location.href='table_lost.jsp'">
 	</div>
+	<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+  <script src="js/slick.js" charset="utf-8"></script>
+  <script>
+  $(document).on('ready',function(){
+	  $('.autoplay').slick({
+		  slidesToShow: 3,
+		  slidesToScroll: 1,
+		  autoplay: true,
+		  autoplaySpeed: 2000,
+		});   
+  });
+  </script>
   </body>
 </html>
