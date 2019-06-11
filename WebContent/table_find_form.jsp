@@ -51,26 +51,29 @@
 		rs = stmt.executeQuery(select_board_count);
 		if(rs.next()) total = rs.getInt(1);
     %>
-<table id="search_view">
-	<form action="table_find_search.jsp" name="frm" method="post">
-		<tr>
-			<td>
-				<select name="search_type">
-					<option value="1">아이디</option>
-					<option value="2">제목</option>
-				</select>
-			</td>
-			<td><input type="text" name="search_text"></td>
-			<td><input type="button" value="확인" class="board_btn" onclick="formChk_search();"></td>
-		</tr>
-	</form>
-</table>
+<div id="title_div">
+	<div>찾아주세요</div>
+	<img src="img/table_title.jpg">
+</div>
+<div id="tag"><b>홈 > 찾아주세요</b></div>
+<hr>
 <table id="table_view">
 	<tr>
-		<td colspan="3">총 <b style="color:#c5e5bc;"><%=total %></b>건의 글이 있습니다.</td>
-	<%if(cookie_id != null){%>
-		<td style="text-align:right;"><a href="table_find_write.jsp"><button class="board_btn">글쓰기</button></a></td>
-	<% } %>
+		<td colspan="2" style="text-align:left;">총 <%=total %>건의 글이 있습니다.</td>
+		<form action="table_find_search.jsp" name="frm" method="post">
+		<td>
+			<select name="search_type">
+				<option value="1">아이디</option>
+				<option value="2">제목</option>
+			</select>
+		</td>
+		<td>
+			<div id="search_div">
+				<input type="image" value="확인" onclick="formChk_search();return false" src="img/search_icon.png">
+				<input type="text" name="search_text">
+			</div>
+		</td>
+		</form>
 	</tr>
 	<tr style="position: relation; top: 80px;">
 		<th>숫자</th>
@@ -120,10 +123,8 @@
  %>
  <table id="table_paging">
  	<tr>
- 		<% if(total != 0){ %>
+		 <% if(PG>BLOCK){ %>
 		  <td><a href="table_find.jsp?pg=1"><<</a></td>
-		 <%}
- 		if(PG>BLOCK){ %>
 		  <td><a href="table_find.jsp?pg=<%=startPage-1%>"><</a></td>
 		 <%}
 		 if(total == 0){ %>
@@ -144,10 +145,8 @@
 		 }
 		 if(endPage<allPage) {%>
 		  <td><a href="table_find.jsp?pg=<%=endPage+1 %>">></a></td>
-		  <%} 
-		   if(total != 0){%>
 		  <td><a href="table_find.jsp?pg=<%=allPage %>">>></a></td>
-		  <%} %>
+		  <%}%>
 	 </tr>
   </table>
 </body>

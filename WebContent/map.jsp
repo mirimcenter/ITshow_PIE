@@ -8,9 +8,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 body {
-  font-family: "La
-  
-  to", sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 /* Fixed sidenav, full height */
@@ -21,7 +19,7 @@ body {
   z-index: 1;
   top: 80px;
   left: 0;
-  background-color: #c5e5bc;
+  background-color: #efefef;
   overflow-x: hidden;
   padding-top: 20px;
 }
@@ -31,7 +29,7 @@ body {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
   font-size: 20px;
-  color: #818181;
+  color: black;
   display: block;
   border: none;
   background: none;
@@ -43,7 +41,7 @@ body {
 
 /* On mouse-over */
 .sidenav a:hover, .dropdown-btn:hover {
-  color: #111;
+  font-weight:bold;
 }
 
 /* Main content */
@@ -55,14 +53,14 @@ body {
 
 /* Add an active class to the active dropdown button */
 .active {
-  background-color: green;
-  color: white;
+  background-color: #dfdfdf;
+  font-weight:bold;
 }
 
 /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
 .dropdown-container {
   display: none;
-  background-color: #add6a2;
+  background: linear-gradient( to right, #dfdfdf, #efefef );
   padding-left: 8px;
 }
 

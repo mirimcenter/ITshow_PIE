@@ -1,45 +1,77 @@
-	#search_view{
-		border: 2px solid #c5e5bc;
-		height: 60px;
-		width: 70%;
-    	margin: center;
-    	margin-left: auto; 
-    	margin-right: auto;
-    	text-align: center;
-	}	
+	.table_view_tr{
+		border-bottom: 1px solid #787878;
+		height: 55px;
+	}
 	
-	#table_view{
-		width: 70%;
-    	border-collapse: collapse;
-    	margin: center;
-		margin-top: 90px;
-    	margin-left: auto; 
-    	margin-right: auto;
-	}	
-	
-	#table_view a{
+	.table_view_tr a{
 		display: block;
 		color: black;
 		text-decoration: none;
 	}
 	
 	#table_view th{
-		border-bottom: 2px solid #c5e5bc;
-    	text-align: center;
-    	height: 70px;
+		background-color: #dfdfdf;
+		border-top: 2px solid black;
+		border-bottom: 1px solid #787878;
+		height: 55px;
 	}
 	
-	#table_view .table_view_tr{
-		border-bottom: 1px solid #ccc;
-		height: 60px;
-	}
-	
-	#table_paging{
-    	margin: center;
-    	margin-top: 100px;
+	#table_view{
+		width: 1000px;
     	margin-left: auto; 
     	margin-right: auto;
     	text-align: center;
+		margin-top: 100px;
+    	
+    }
+	
+	#table_view tr{
+		height: 55px;
+    	
+    }
+    #title_div{
+    	position:relative;
+		margin-bottom: 5px;
+    }
+    #title_div img{
+    	width: 100%;
+    	height: 300px;
+    }
+    #title_div div{
+    	position:absolute;
+    	color:white;
+    	font-size: 17pt;
+    	border-top: 1px solid white;
+    	top: 50%;
+    	left: 50%;
+    	transform: translate(-50%, -50%);
+    }
+    #search_div{
+    	position:relative;
+    	width: 100%;
+    }
+    #search_div select{
+    	outline:none;
+    	width: 100%;
+    }
+    #search_div input[type=text]{
+    	outline:none;
+    	width: 100%;
+    }
+    #search_div input[type=image]{
+    	outline:none;
+    	position:absolute;
+    	top: 5px;
+    	right: 5px;
+    }
+	
+	#table_paging{
+    	margin: center;
+    	margin-top: 80px;
+    	margin-left: auto; 
+    	margin-right: auto;
+    	text-align: center;
+    	margin-bottom: 50px;
 	}
 	#table_paging a{
 		display: block;
@@ -56,9 +88,6 @@
     	text-align: center;
 	}
 	
-	#table_content{
-	}
-	
 	.board_btn{
 		width: 100px;
 		height: 40px;
@@ -68,4 +97,15 @@
 	
 	.td3{
 		width:50%;
+	}
+	
+	hr{
+		margin-top: 5px;
+		width:100%;
+		background-color:black;
+	}
+	
+	#tag{
+		margin-left: 450px;
+		font-size: 12px;
 	}

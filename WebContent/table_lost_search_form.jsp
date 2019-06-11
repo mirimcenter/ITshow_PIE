@@ -102,26 +102,29 @@
 		rs = stmt.executeQuery(select_board_count);
 		if(rs.next()) total = rs.getInt(1);
     %>
-<table id="search_view">
-	<form action="table_lost_search.jsp" name="frm" method="post">
-		<tr>
-			<td>
-				<select name="search_type">
-					<option value="1">아이디</option>
-					<option value="2">제목</option>
-				</select>
-			</td>
-			<td><input type="text" name="search_text"></td>
-			<td><input type="button" value="확인" class="board_btn" onclick="formChk_search();"></td>
-		</tr>
-	</form>
-</table>
+<div id="title_div">
+	<div>유기물품</div>
+	<img src="img/table_title.jpg">
+</div>
+<div id="tag"><b>홈 > 유기물품</b></div>
+<hr>
 <table id="table_view" style="margin-top: 100px;">
 	<tr>
-		<td colspan="4">총 <%=total %>건의 글이 있습니다.</td>
-	<%if(cookie_id != null){%>
-		<td style="text-align:right;"><a href="table_lost_search.jsp"><button id="board_write_btn">글쓰기</button></a></td>
-	<% } %>
+		<td colspan="3" style="text-align:left;">총 <%=total %>건의 글이 있습니다.</td>
+		<form action="table_lost_search.jsp" name="frm" method="post">
+		<td>
+			<select name="search_type">
+				<option value="1">아이디</option>
+				<option value="2">제목</option>
+			</select>
+		</td>
+		<td>
+			<div id="search_div">
+				<input type="image" value="확인" onclick="formChk_search();return false" src="img/search_icon.png">
+				<input type="text" name="search_text">
+			</div>
+		</td>
+		</form>
 	</tr>
 	<tr style="position: relation; top: 80px;">
 		<th>숫자</th>
@@ -157,12 +160,11 @@
 	<tr class="table_view_tr">
 		<td style="text-align:center"><%= currentNum %></td>
 		<td style="text-align:center"><%= d_day %></td>
-		<td><a href="table_lost_search.jsp?bnum=<%= bnum %>"><%= title %></a></td>
+		<td><a href="table_lost_content.jsp?bnum=<%= bnum %>"><%= title %></a></td>
 		<td style="text-align:center"><%= id %></td>
 		<td style="text-align:center"><%= date %></td>
 	</tr>
 <% 
-
 	currentNum--;
 	} 
 		} 
@@ -174,11 +176,8 @@
  %>
  <table id="table_paging">
  	<tr>
- 		<% if(total != 0){ %>
+ 		<%if(PG>BLOCK){%>
 		  <td><a href="table_lost_search.jsp?pg=1&search_type=<%=search_type%>&search_text=<%=search_text%>"><<</a></td>
-	 	<%}
-	  	if(PG>BLOCK){
-		 %>
 		  <td><a href="table_lost_search.jsp?pg=<%=startPage-1%>&search_type=<%=search_type%>&search_text=<%=search_text%>"><</a></td>
 		 <%}
 	 	if(total == 0){ %>
@@ -199,8 +198,6 @@
 		 }
 		 if(endPage<allPage) {%>
 		  <td><a href="table_lost_search.jsp?pg=<%=endPage+1 %>&search_type=<%=search_type%>&search_text=<%=search_text%>">></a></td>
-		  <%} 
-		  if(total != 0){%>
 		  <td><a href="table_lost_search.jsp?pg=<%=allPage %>&search_type=<%=search_type%>&search_text=<%=search_text%>">>></a></td>
 		  <%} %>
 	 </tr>
