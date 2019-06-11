@@ -45,7 +45,7 @@
 				</ul>
 				<ul style="position: absolute;">
 					<li class="nav-item content-li">
-						<a class="nav-link" href="table_find.jsp">찾습니다</a>
+						<a class="nav-link" href="table_find.jsp">찾아주세요</a>
 					</li>
 					<li class="nav-item content-li">
 						<a class="nav-link" href="map_main1F.jsp">찾아가세요</a>

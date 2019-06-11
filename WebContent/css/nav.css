@@ -26,6 +26,7 @@ nav{
 }
 a{
    	text-decoration: none;
+   	font-weight: bold;
 }
 .justify-content-center{
    	background-color: white;
@@ -41,7 +42,7 @@ a{
 .content-li{
  	display: inline-block;
     list-style-type: none;
-    margin-left: 80px;
+    margin-left: 50px;
     margin-top: 10px;
     font-size: 13pt;
     font-style:bold;
@@ -69,7 +70,7 @@ a{
 	border-radius: 5px;
 }
 .button1{
-	color: #abd6a0;
+	color: black;
 }
 .button1:hover{
 	color: #111;
