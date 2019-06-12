@@ -63,7 +63,7 @@ while(rs.next()) {
 						for(int i=0;i<entire_img.size();i++) {
 					%>
 					<div>
-						<a href="table_found_content.jsp?bnum=<%= entire_img.get(i) %>"><img style="width:200px;height:200px;" src="img_view.jsp?bnum=<%= entire_img.get(i) %>"></a>
+						<a href="table_found_content.jsp?bnum=<%= entire_img.get(i) %>"><img style="width:250px;height:250px;" src="img_view.jsp?bnum=<%= entire_img.get(i) %>"></a>
 					</div>
 					<%
 						}
