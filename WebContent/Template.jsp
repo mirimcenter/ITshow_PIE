@@ -7,15 +7,8 @@
 <head>
 <title>미림 분실물 센터</title>
 <style>
-	@font-face {
-	    font-family: BebasNeueRegular, "나눔스퀘어라운드OTF";
-	    src: url('fonts/BebasNeue-webfont.eot');
-	    src: url('fonts/BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),
-	         url('fonts/BebasNeue-webfont.woff') format('woff'),
-	         url('fonts/BebasNeue-webfont.ttf') format('truetype'),
-	         url('fonts/BebasNeue-webfont.svg#BebasNeueRegular') format('svg');
-	    font-weight: normal;
-	    font-style: normal;
+	body{
+		overflow-x: hidden;
 	}
 </style>
 </head>
