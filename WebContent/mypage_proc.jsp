@@ -29,7 +29,7 @@
         <title></title>
         <meta charset=utf-8>
         <link rel="stylesheet" type="text/css" href="css/mypage.css">
-        <link rel="stylesheet" type="text/css" href="css/table.css">
+        <link rel="stylesheet" type="text/css" href="css/table.css" />
     </head>
     <body>
 	    <div class="mypage">
@@ -45,12 +45,12 @@
 	                    <td width="50px"><p class="pw">PW</p></td>
 	                    <td width="250px"><textarea id="pw" name="pw"><%= pw %></textarea></td>
 	                </tr>
-	                <tr>
+	                <tr style="border-bottom:none;">
 	                    <td width="50px"><p class="email">EMAIL</p></td>
 	                    <td width="250px"><%= email %></td>
 	                </tr>
-	                <tr>
-	                <td colspan=2 style="border:none; text-align: right;"><button type="submit" value="회원정보 수정" class="btn_re">회원정보 수정</button></td>
+	                <tr style="border-bottom:none;">
+	                <td colspan=2><button type="submit" value="회원정보수정" class="btn_re">회원정보수정</button></td>
 	                </tr>
 	                </form>
 	            </table>
@@ -62,7 +62,7 @@
 		//페이징 처리----------------------------------------------------------
 
 		//객체 초기화
-			final int ROWSIZE = 8; //한페이지에 보일 게시물 수
+			final int ROWSIZE = 5; //한페이지에 보일 게시물 수
 			final int BLOCK = 5;   //아래에 보일 페이지 최대 개수
 			
 			int PG = 1; //기본 페이지 값
@@ -90,9 +90,9 @@
 		rs = stmt.executeQuery(select_board_count);
 		if(rs.next()) total = rs.getInt(1);
     %> 
-	            <table class="mypost">
+	            <table id="table_view">
 	                <tr>
-	                    <td colspan="3" height="100px"><div>내가 작성한 게시글</div></td>
+	                    <td colspan="3" height="100px" style="margin-left: 100px;"><div>내가 작성한 게시글</div></td>
 	                </tr>
 	                
 	                <tr height="20px">
@@ -126,7 +126,7 @@
 				String title = rs.getString("title");
 				Timestamp date = rs.getTimestamp("date");
 %>
-					<tr>
+					<tr class="table_view_tr">
 						<td><%= bnum%></td>
 						<td><%= d_day %></td>
 						<td><a href="table_found_content.jsp?id=<%= cookie_id %>"><%= title %></a></td>
@@ -175,14 +175,7 @@
 <%} %>
 				 	</tr>
 			  	</table>
-	                
-				<table class="delete">
-		        	<form action="proc_mypage_delete.jsp" name="frm" method="post">
-			            <tr>
-			            <td><button type="submit" class="btn_del">탈퇴하기</button></td>
-			            </tr>
-		            </form>
-		        </table>
+			    <button type="submit" class="btn_del">탈퇴하기</button>
 	        </div>
         </div>
     </body>
