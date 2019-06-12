@@ -43,14 +43,17 @@
     <body>
 <%
 ArrayList<String> entire_img = new ArrayList<String>();
+ArrayList<String> entire_space = new ArrayList<String>();
 int null_chk;
 String select_title = "select * from found_board";
 pstmt = conn.prepareStatement(select_title);
 rs = pstmt.executeQuery();
 
 while(rs.next()) {
+	
 	null_chk = rs.getString("img")==null?0:1;
-	if(null_chk==1) entire_img.add(rs.getString("bnum"));
+	if(null_chk==1) {entire_img.add(rs.getString("bnum"));
+	entire_space.add(rs.getString("space"));}
 }
 
 %>
@@ -63,7 +66,7 @@ while(rs.next()) {
 						for(int i=0;i<entire_img.size();i++) {
 					%>
 					<div>
-						<a href="table_found_content.jsp?bnum=<%= entire_img.get(i) %>"><img style="width:250px;height:250px;" src="img_view.jsp?bnum=<%= entire_img.get(i) %>"></a>
+						<a href="table_found_content.jsp?bnum=<%= entire_img.get(i) %>&space=<%=entire_space.get(i)%>"><img style="width:200px;height:200px;" src="img_view.jsp?bnum=<%= entire_img.get(i) %>"></a>
 					</div>
 					<%
 						}
