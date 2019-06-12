@@ -19,7 +19,8 @@ table, th, td {
 .board_btn, input[type=button]{
 		width: 90px;
 		height: 30px;
-		background-color:#c5e5bc;
+		background-color:black;
+		color:white;
 		border:none;
 	}
 input[type=text]{
@@ -46,7 +47,4 @@ textarea{
 	}
 	.td1{
 		width:10%;
-	}
-	hr{
-		color:black;
 	}
