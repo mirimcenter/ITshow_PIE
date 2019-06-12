@@ -26,22 +26,23 @@
 		contents = rs.getString("contents");
 	}
 %>
-<table id="table_content">
+<a class="btn_back" href="table_found_content.jsp?space=<%=space %>&bnum=<%=bnum%>"><button class="board_btn">돌아가기</button></a>
+<br><br><font class="btn_back">수정하기</font><br>
+<hr width="70%">
+<table id="table">
 <form action="table_found_comment_update.jsp" name="frm" method="post">
 	<tr>
 		<td><%= cookie_id %></td>
-		<td><textarea id="contents" name="comment_contents"><%= contents %></textarea></td>
-		<td><input type="hidden" name="space" value="<%= space %>">
+		<td><textarea id="contents" name="comment_contents"><%= contents %></textarea>
+		<input type="hidden" name="space" value="<%= space %>">
 		<input type="hidden" name="bnum" value="<%= bnum %>">
-		<input type="hidden" name="cnum" value="<%= cnum %>"></td>
-	</tr>
-	<tr>
-		<td colspan="3">
-			<input type="button" value="수정하기" onclick="formChk_comment()">
-	</form>
-			<a href="table_found_content.jsp?space=<%=space %>&bnum=<%=bnum%>"><button class="board_btn">돌아가기</button></a>
+		<input type="hidden" name="cnum" value="<%= cnum %>">
 		</td>
 	</tr>
+	</form>
 </table>
+<div class="btn">
+	<input type="button" value="수정하기" onclick="formChk_comment()">
+	</div>
 </body>
 </html>
