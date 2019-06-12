@@ -63,7 +63,7 @@
 %> --%>
     <div align="center">
             <form action="join_result.jsp" method="post" name="userInfo" onsubmit="return checkValue()">
-                <div class="userbox" style="width: 700px; height: 500px;">
+                <div class="userbox" style="width: 700px; height: 600px;">
                     <p class="login_docu"><font color="#00a651"><b>미림센터에 가입</b></font>하시고 물건을 보호하세요!</p>
                     <p class="little">미림센터를 이용하기 위해서 회원가입을 해주세요</p>
                     <font class="attend">* 체크된 항목은 필수로 기입하셔야합니다</font>
