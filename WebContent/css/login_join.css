@@ -24,9 +24,9 @@
 
 .tbl{
     border: none;
-    width: 90%;
+    width: 80%;
     padding: 50px;
-    margin-left: 50px;
+    margin-left: 70px;
 }
 
 .tbl td{
@@ -35,7 +35,7 @@
 
 .tbl input{
     border: 5px solid #e1e1e1;
-    height: 20px;
+    height: 40px;
     width: 250px;
 }
 
@@ -44,6 +44,7 @@
     padding-right: 50px;
     padding-top: 0px;
     padding-bottom: 0px;
+    margin-left: 100px;
 }
 
 .join td{
@@ -71,24 +72,24 @@
     width: 120px;
     height: 40px;
     border: none;
-    margin-left: 300px;
+    margin-left: 250px;
     margin-top: 10px;
 }
 
 .login_docu{
     font-size: 15pt;
-    margin-left: 100px;
+    margin-left: 60px;
     font-family: "NotoSansCJKkr";
 }
 
 .little{
     color: #999;
-    margin-left: 100px;
+    margin-left: 60px;
     font-family: "NotoSansCJKkr";
 }
 
 .attend{
     color: #00a651;
     font-size: 8pt;
-    margin-left: 100px;
+    margin-left: 60px;
 }
