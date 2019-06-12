@@ -45,7 +45,7 @@
 		<tr class="tr2">
 			<td>내용</td>
 			<td>
-				<textarea id="contents" name="contents" class="text2"><%= contents %></textarea>
+				<textarea id="contents" name="contents"><%= contents %></textarea>
 				<input type="hidden" name="bnum" value="<%= bnum %>">
 				<input type="hidden" name="space" value="<%= space %>">
 			</td>

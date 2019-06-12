@@ -29,34 +29,37 @@
 		date = rs.getString("date");
 	}
 %>
+<a class="btn_back" href="table_find.jsp"><button class="board_btn">돌아가기</button></a>
+<br><br><font class="btn_back">수정하기</font><br>
+<hr width="70%">
 <form action="proc_table_find_update.jsp" name="frm" method="post">
-	<table id="table_content">
+	<table id="table">
 		<tr>
+		<td class="td1">제목</td>
 			<td>
 				<input type="text" id="title" name="title" value="<%= title %>">
 			</td>
 		</tr>
 		<tr class="tr2">
-			<td style="height:400px">
+		<td>내용</td>
+		<td>
 				<textarea id="contents" name="contents"><%= contents %></textarea>
 				<input type="hidden" name="bnum" value="<%= bnum %>">
 			</td>
 		</tr>
 		<tr>
+		<td>파일</td>
 			<td>
 				<input type="file" id="f" name="f">
 				<input type="hidden" name="file">
 			</td>
 			
 		</tr>
-		<tr>
-			<td>
-				<input type="button" value="작성" onclick="formChk()">
-				<input type="reset" value="다시" class="board_btn">
 </form>
-				<a href="table_find.jsp"><button class="board_btn">돌아가기</button></a>
-			</td>
-		</tr>
 	</table>
+	<div class="btn">
+	<input type="button" value="작성" onclick="formChk()">
+	<input type="reset" value="다시" class="board_btn">
+	</div>
 </body>
 </html>

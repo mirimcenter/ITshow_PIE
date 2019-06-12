@@ -20,7 +20,6 @@
 <hr width="70%">
 <table id="table">
 	<form action="proc_table_found_write.jsp" name="frm" method="post">
-		<tr>
 		<tr class="tr1">
 			<td class="td1">제목</td>
 			<td>
