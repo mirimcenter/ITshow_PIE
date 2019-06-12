@@ -27,7 +27,8 @@ textarea{
 .board_btn, input[type=button]{
 		width: 90px;
 		height: 30px;
-		background-color:#c5e5bc;
+		background-color:black;
+		color:white;
 		border:none;
 	}
 	.td1{
