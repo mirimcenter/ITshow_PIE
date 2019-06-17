@@ -8,20 +8,20 @@
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		
-		String member_query = "insert into member (email, id, pw) value (?, ?, ?)";
-		String member_id = "select id from member";
+		String member_query = "insert into member(email, id, pw) value(?, ?, ?)";
+		String member_id = "select id from member where id="+id;
 		
 		try{
+			System.out.println("try");
 			pstmt = conn.prepareStatement(member_id);
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()){
-				if(rs.getString(1).equals(id)){
-					out.println("<script>");
-					out.println("alert('이미 사용중인 아이디 입니다')");
-					out.println("location.href='join_form.jsp'");
-					out.println("</script>");
-				}
+				out.println("<script>");
+				out.println("alert('이미 사용중인 아이디 입니다')");
+				out.println("location.href='join_form.jsp'");
+				out.println("</script>");
+				
 			}
 			else{
 				pstmt = conn.prepareStatement(member_query); 
@@ -36,10 +36,9 @@
 					<jsp:param value="join_result_proc.jsp" name="CONTENTPAGE"/>
 				</jsp:forward>
 <%
+				pstmt.close();
+				conn.close();
 			}
-			
-			pstmt.close(); 
-			conn.close();
 		}catch (Exception e){ 
 			System.out.println(e.getMessage());
 %>
