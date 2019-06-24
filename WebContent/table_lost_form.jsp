@@ -149,14 +149,16 @@
 	else {
 		while(rs.next()){
 			int bnum = rs.getInt("bnum");
-			String d_day = rs.getString("d_day");
+			int d_day = rs.getInt("d_day");
 			String title = rs.getString("title");
 			String id = rs.getString("id");
 			Timestamp date = rs.getTimestamp("date");
+			
+			int d_day_real = 7 + d_day;
 %>
 	<tr class="table_view_tr">
 		<td style="text-align:center"><%= currentNum %></td>
-		<td style="text-align:center"><%= d_day %></td>
+		<td style="text-align:center"><%= d_day_real %></td>
 		<td><a href="table_lost_content.jsp?bnum=<%= bnum %>"><%= title %></a></td>
 		<td style="text-align:center"><%= id %></td>
 		<td style="text-align:center"><%= date %></td>
